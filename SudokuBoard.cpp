@@ -58,7 +58,7 @@ int SudokuBoard::getNum(int x, int y) {
     if (y > 8 || y < 0)
         return 99;
 
-    return place[x][y];
+    return (int) place[x][y];
 
 }
 
@@ -106,4 +106,12 @@ void SudokuBoard::print() {
         if (i % 3 == 2) std::cout << "-------------------------------\n";
     }
 
+}
+
+SudokuBoard &SudokuBoard::operator=(SudokuBoard other) {
+    for (int i = 0; i < 9; i++)
+        for (int j = 0; j < 9; j++)
+            this->place[i][j] = other.place[i][j];
+
+    return *this;
 }

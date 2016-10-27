@@ -5,7 +5,6 @@
 #ifndef SUDOKUSOLVER_SUDOKUBOARD_H
 #define SUDOKUSOLVER_SUDOKUBOARD_H
 
-
 #include <stdint-gcc.h>
 
 class SudokuBoard {
@@ -14,14 +13,22 @@ private:
 
 public:
     SudokuBoard();
-    SudokuBoard(int p[9][9]);
-    bool setNum(int num, int x, int y);
-    bool checkNum(int num, int x, int y);
-    bool delNum(int x, int y);
-    int getNum(int x, int y);
-    void print();
-    bool checkIntegrity();
-};
 
+    SudokuBoard(int p[9][9]);
+
+    bool setNum(int num, int x, int y);
+
+    bool checkNum(int num, int x, int y);
+
+    bool delNum(int x, int y);
+
+    int getNum(int x, int y);
+
+    void print();
+
+    bool checkIntegrity();
+
+    SudokuBoard &operator=(SudokuBoard other);
+};
 
 #endif //SUDOKUSOLVER_SUDOKUBOARD_H
