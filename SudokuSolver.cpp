@@ -24,9 +24,9 @@ SudokuSolver::SudokuSolver(SudokuBoard *board) {
 }
 
 bool SudokuSolver::solver(int x, int y) {
-    counter++;
-    std::cout << "\r" << counter;
-    std::cout.flush();
+//    counter++;
+//    std::cout << "\r" << counter;
+//    std::cout.flush();
     int tmpNum;
     bool breakFlag = false;
 
