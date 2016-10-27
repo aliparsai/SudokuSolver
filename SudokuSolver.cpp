@@ -2,7 +2,6 @@
 // Created by perham on 10/27/16.
 //
 
-#include <iostream>
 #include "SudokuSolver.h"
 
 SudokuBoard *SudokuSolver::getBoard() const {
@@ -15,18 +14,13 @@ void SudokuSolver::setBoard(SudokuBoard *board) {
 
 SudokuSolver::SudokuSolver() {
     board = new SudokuBoard();
-    counter = 0;
 }
 
 SudokuSolver::SudokuSolver(SudokuBoard *board) {
     this->board = board;
-    counter = 0;
 }
 
 bool SudokuSolver::solver(int x, int y) {
-//    counter++;
-//    std::cout << "\r" << counter;
-//    std::cout.flush();
     int tmpNum;
     bool breakFlag = false;
 

@@ -2,21 +2,20 @@
 // Created by perham on 10/27/16.
 //
 
-#include <fstream>
 #include <iostream>
 #include "SudokuBoard.h"
 
 SudokuBoard::SudokuBoard(int p[9][9]) {
     for (int i = 0; i < 9; i++)
         for (int j = 0; j < 9; j++)
-            place[i][j] = (uint8_t) ((p[i][j] <= 9 || p[i][j] > 0) ? p[i][j] : 99);
+            place[i][j] = ((p[i][j] <= 9 || p[i][j] > 0) ? p[i][j] : 99);
 }
 
 SudokuBoard::SudokuBoard() {
 
     for (int i = 0; i < 9; i++)
         for (int j = 0; j < 9; j++)
-            place[i][j] = (uint8_t) 99;
+            place[i][j] = 99;
 
 }
 
@@ -24,7 +23,7 @@ bool SudokuBoard::setNum(int num, int x, int y) {
 
     bool status = checkNum(num, x, y);
     if (status)
-        place[x][y] = (uint8_t) num;
+        place[x][y] = num;
 
     return status;
 
@@ -43,8 +42,8 @@ bool SudokuBoard::checkNum(int num, int x, int y) {
     int i;
 
     for (i = 0; i < 9; i++)
-        if (place[i][y] == (uint8_t) num || place[x][i] == (uint8_t) num ||
-            place[(x - (x % 3) + i / 3)][(y - (y % 3) + i % 3)] == (uint8_t) num)
+        if (place[i][y] == num || place[x][i] == num ||
+            place[(x - (x % 3) + i / 3)][(y - (y % 3) + i % 3)] == num)
             return false;
 
     return true;
@@ -82,10 +81,10 @@ bool SudokuBoard::checkIntegrity() {
             if (num <= 9 && num > 0) {
                 delNum(i, j);
                 if (!checkNum(num, i, j)) {
-                    place[i][j] = (uint8_t) num;
+                    place[i][j] = num;
                     return false;
                 }
-                place[i][j] = (uint8_t) num;
+                place[i][j] = num;
             }
 
         }

@@ -5,11 +5,10 @@
 #ifndef SUDOKUSOLVER_SUDOKUBOARD_H
 #define SUDOKUSOLVER_SUDOKUBOARD_H
 
-#include <stdint-gcc.h>
 
 class SudokuBoard {
 private:
-    uint8_t place[9][9];
+    unsigned char place[9][9];
 
 public:
     SudokuBoard();

@@ -11,7 +11,6 @@ class SudokuSolver {
 
 private:
     SudokuBoard *board;
-    uint64_t counter;
 
 public:
 
